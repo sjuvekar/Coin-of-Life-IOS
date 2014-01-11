@@ -216,7 +216,7 @@ public class Board {
   
   // Responds to reset pressed by user
   public void reset() {
-    for (int i = 0; i < max_grid_x; i++) {
+    for (int i = 0; i <= max_grid_x; i++) {
       for (int j = 0; j < max_grid_y; j++) {
         alive[i][j] = false;
         ever_alive[i][j] = false;
