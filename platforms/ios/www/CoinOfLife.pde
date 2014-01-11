@@ -1173,8 +1173,8 @@ public class Menu {
   public Menu(int a_width, int c_width, int a_height, int c_height) {
     int button_width = width - a_width - c_width;
     int button_height = c_width;
-    start_button = new CoinButton(width / 2 - button_width - cell_width() / 2, height - 2 * button_height, button_width, button_height, "Start");
-    tut_button = new CoinButton(width / 2 + cell_width() / 2, height - 2 * button_height, button_width, button_height, "Tutorial");
+    start_button = new CoinButton(width / 2 - button_width - cell_width() / 2, height - 4 * button_height, button_width, button_height, "Start");
+    tut_button = new CoinButton(width / 2 + cell_width() / 2, height - 4 * button_height, button_width, button_height, "Tutorial");
     //store_button = new CoinButton((int)((width - button_width) / 2) + button_width + 10, (int)((height) / 2) + 205, button_width - 20, button_height - 10, "Store");
     sound_button = new Toggle("", width - 4 * c_width, height - 4 * c_height, 2 * c_width, 2 * c_height);
   }
@@ -1203,13 +1203,13 @@ public class Menu {
     image(G_LOGO_IMAGE, width/2, height/2 - height/6, height / 3, height / 3);
     pushStyle();
     textSize(cell_height());
-    text("Coin Of Life", width/2 - 150, height/2 + cell_height());
+    text("Coin Of Life", width/2 - 100, height/2 + cell_height());
     textSize(cell_height() / 2);
     fill(183, 154, 0);
-    text("The most addictive coin game ever!", width/2 - 225, height/2 + 2 * cell_height());
+    text("The most addictive coin game ever!", width/2 - 150, height/2 + 2 * cell_height());
     fill(255);
     textSize(cell_height() / 3);
-    text("Place coins on board, watch them evolve, earn gems, diamonds and rocks!", width/2 - 350, height/2 + 3 * cell_height());
+    text("Place coins on board, watch them evolve, earn gems, diamonds and rocks!", width/2 - 200, height/2 + 3 * cell_height());
     popStyle();
     start_button.drawit();
     tut_button.drawit();
@@ -1534,7 +1534,7 @@ public class Player {
       state = PLAYING;
       reset();
     }
-    else if ((state == INIT || state == PLAYING) && mouseX >= c_width && mouseX <= a_width - c_width && mouseY >= c_height && mouseY <= a_height - c_height) {
+    else if ((state == INIT || state == PLAYING) && mouseX >= c_width && mouseX <= a_width - c_width && mouseY >= c_height && mouseY <= a_height) {
       state = PLAYING;
       placeCoin();
     }
@@ -1946,7 +1946,7 @@ int cell_width() {
     return 20;
   if (height <= 480)
     return 40;
-  return 54;
+  return 40;
 }
 
 int cell_height() {
