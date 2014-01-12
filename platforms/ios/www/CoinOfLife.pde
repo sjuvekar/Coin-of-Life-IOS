@@ -29,7 +29,7 @@ boolean G_SOUND_STATE;
 void setup() {
   // Setting up background and colors
   background(0);
-  size(1024, 768);
+  size(1024, 750);
   frameRate(30);
   //orientation(LANDSCAPE);
   //stroke(255);
