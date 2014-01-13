@@ -1859,13 +1859,16 @@ public class TutDrawer {
     // Setting up background and colors
     background(0);
     stroke(255);
+    
+    int n_horizontal = (int)(a_width / c_width);
+    int n_vertical = (int)(a_height / c_height);
 
     // Draw all the cells
-    for (int i = c_width; i < a_width - c_width; i += c_width) {
-      line(i, c_height, i, a_height - (int)(0.2 * c_height));
+    for (int i = 1; i < n_horizontal; i++) {
+      line(i * c_width, 2 * c_height, i * c_width, n_vertical * c_height);
     }
-    for (int i = c_height; i < a_height; i += c_height) {
-      line(c_width, i, a_width - (int)(3 * c_width / 2), i);
+    for (int i = 2; i <= n_vertical; i++) {
+      line(c_width, i * c_height, (n_horizontal - 1) * c_width, i * c_height);
     }
     
     // Red Squares
@@ -1879,7 +1882,7 @@ public class TutDrawer {
     boolean[][] alive = player.getAlive();
     boolean[][] ever_alive = player.getEverAlive();
     for (int i = 0; i < alive.length; i++) {
-      for (int j = 0; j < alive[i].length; j++) {
+      for (int j = 2; j < alive[i].length; j++) {
         if (ever_alive[i][j]) {
           pushStyle();
           fill(75, 75, 75);
@@ -1902,7 +1905,7 @@ public class TutDrawer {
         pushStyle();
         textSize(24);
         fill(200, 0, 0);
-        text("Tap all and only red squares!", a_width - c_width, 5 * c_height);
+        text("Tap all and only red squares!", a_width - (int)(1.1 * c_width), 5 * c_height);
         popStyle(); 
       }
     }
