@@ -66,6 +66,8 @@
 	<string></string>
 	<key>NSMainNibFile~ipad</key>
 	<string></string>
+	<key>UILaunchImageFile~ipad</key>
+	<string>Default</string>
 	<key>UILaunchImages~ipad</key>
 	<array>
 		<dict>
